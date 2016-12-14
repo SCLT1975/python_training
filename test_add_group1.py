@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.common.action_chains import ActionChains
+from group import Group
+
 import time, unittest
 
 def is_alert_present(wd):
@@ -22,19 +24,19 @@ class test_add_group1(unittest.TestCase):
     def return_to_groups(self, wd):
         wd.find_element_by_link_text("group page").click()
 
-    def create_new_group(self, wd, name, header, footer):
+    def create_new_group(self, wd, Group):
         # init group creation
         wd.find_element_by_name("new").click()
         # fill group form
         wd.find_element_by_name("group_name").click()
         wd.find_element_by_name("group_name").clear()
-        wd.find_element_by_name("group_name").send_keys(name)
+        wd.find_element_by_name("group_name").send_keys(Group.name)
         wd.find_element_by_name("group_header").click()
         wd.find_element_by_name("group_header").clear()
-        wd.find_element_by_name("group_header").send_keys(header)
+        wd.find_element_by_name("group_header").send_keys(Group.header)
         wd.find_element_by_name("group_footer").click()
         wd.find_element_by_name("group_footer").clear()
-        wd.find_element_by_name("group_footer").send_keys(footer)
+        wd.find_element_by_name("group_footer").send_keys(Group.footer)
         # submit group creation
         wd.find_element_by_name("submit").click()
 
@@ -60,7 +62,7 @@ class test_add_group1(unittest.TestCase):
         self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
         self.open_groups_page(wd)
-        self.create_new_group(wd, name="2341", header="wafasdfsadf", footer="fhfghfdghfdgh")
+        self.create_new_group(wd, Group(name="2341", header="wafasdfsadf", footer="fhfghfdghfdgh"))
         self.return_to_groups(wd)
         self.logout(wd)
 
@@ -70,7 +72,7 @@ class test_add_group1(unittest.TestCase):
         self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
         self.open_groups_page(wd)
-        self.create_new_group(wd, name="", header="", footer="")
+        self.create_new_group(wd, Group(name="", header="", footer=""))
         self.return_to_groups(wd)
         self.logout(wd)
 
