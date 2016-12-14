@@ -16,21 +16,31 @@ class test_add_group1(unittest.TestCase):
         self.wd.implicitly_wait(60)
     
     def test_test_add_group1(self):
-        success = True
+
         wd = self.wd
-        wd.get("http://localhost/addressbook/")
+        self.open_home_page(wd)
+        self.login(wd)
+        self.open_groups_page(wd)
+        self.create_new_group(wd)
+        self.return_to_groups(wd)
+        self.logout(wd)
+
+    def logout(self, wd):
+        # logout
+        wd.find_element_by_link_text("Logout").click()
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").send_keys("\\undefined")
-        wd.find_element_by_id("LoginForm").click()
         wd.find_element_by_name("user").click()
-        wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys("admin")
-        wd.find_element_by_name("pass").click()
-        wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys("secret")
-        wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
-        wd.find_element_by_link_text("groups").click()
+        wd.find_element_by_name("user").send_keys("\\undefined")
+
+    def return_to_groups(self, wd):
+        # return to group page
+        wd.find_element_by_link_text("group page").click()
+
+    def create_new_group(self, wd):
+        # init group creation
         wd.find_element_by_name("new").click()
+        # fill group form
         wd.find_element_by_name("group_name").click()
         wd.find_element_by_name("group_name").clear()
         wd.find_element_by_name("group_name").send_keys("2341")
@@ -43,16 +53,27 @@ class test_add_group1(unittest.TestCase):
         wd.find_element_by_name("group_name").click()
         wd.find_element_by_name("group_name").clear()
         wd.find_element_by_name("group_name").send_keys("asdfasdf")
+        # submit group creation
         wd.find_element_by_name("submit").click()
-        wd.find_element_by_link_text("group page").click()
-        wd.find_element_by_link_text("home").click()
-        wd.find_element_by_link_text("Logout").click()
+
+    def open_groups_page(self, wd):
+        wd.find_element_by_link_text("groups").click()
+
+    def login(self, wd):
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").send_keys("\\undefined")
+        wd.find_element_by_id("LoginForm").click()
         wd.find_element_by_name("user").click()
-        wd.find_element_by_name("user").send_keys("\\undefined")
-        self.assertTrue(success)
-    
+        wd.find_element_by_name("user").clear()
+        wd.find_element_by_name("user").send_keys("admin")
+        wd.find_element_by_name("pass").click()
+        wd.find_element_by_name("pass").clear()
+        wd.find_element_by_name("pass").send_keys("secret")
+        wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
+
+    def open_home_page(self, wd):
+        wd.get("http://localhost/addressbook/")
+
     def tearDown(self):
         self.wd.quit()
 
