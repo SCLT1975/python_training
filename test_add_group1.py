@@ -25,6 +25,7 @@ class test_add_group1(unittest.TestCase):
         wd.find_element_by_link_text("group page").click()
 
     def create_new_group(self, wd, Group):
+        self.open_groups_page(wd)
         # init group creation
         wd.find_element_by_name("new").click()
         # fill group form
@@ -39,11 +40,13 @@ class test_add_group1(unittest.TestCase):
         wd.find_element_by_name("group_footer").send_keys(Group.footer)
         # submit group creation
         wd.find_element_by_name("submit").click()
+        self.return_to_groups(wd)
 
     def open_groups_page(self, wd):
         wd.find_element_by_link_text("groups").click()
 
     def login(self, wd, username, password):
+        self.open_home_page(wd)
         wd.find_element_by_id("LoginForm").click()
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").send_keys(username)
@@ -53,27 +56,21 @@ class test_add_group1(unittest.TestCase):
         wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
 
     def open_home_page(self, wd):
-        wd.get("http://localhost/addressbook/")
+        wd.get("http://localhost:8080/addressbook/")
 
 
     def test_test_add_group1(self):
 
         wd = self.wd
-        self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
-        self.open_groups_page(wd)
         self.create_new_group(wd, Group(name="2341", header="wafasdfsadf", footer="fhfghfdghfdgh"))
-        self.return_to_groups(wd)
         self.logout(wd)
 
     def test_test_empty_group1(self):
 
         wd = self.wd
-        self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
-        self.open_groups_page(wd)
         self.create_new_group(wd, Group(name="", header="", footer=""))
-        self.return_to_groups(wd)
         self.logout(wd)
 
     def tearDown(self):
