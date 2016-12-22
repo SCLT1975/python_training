@@ -1,17 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import pytest
-from fixture.application import Application
 from model.new_user_data import N_u_d
-
-
-@pytest.fixture()
-def app(request):
-    fixture = Application()
-    request.addfinalizer(fixture.destroy)
-    return fixture
-
-
 
 
 def test_test_new_contact(app):

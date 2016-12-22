@@ -32,3 +32,11 @@ class GroupHelper:
         wd = self.app.wd
         wd.find_element_by_link_text("groups").click()
 
+    def delete_1st_group(self):
+        wd = self.app.wd
+        self.open_groups_page()
+        # select first group
+        wd.find_element_by_name("selected[]").click()
+        # delete first group
+        wd.find_element_by_name("delete").click()
+        self.return_to_groups()
