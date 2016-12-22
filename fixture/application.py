@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from selenium.webdriver.firefox.webdriver import WebDriver
 from fixture.session import Sessionhelper
 from fixture.group import GroupHelper

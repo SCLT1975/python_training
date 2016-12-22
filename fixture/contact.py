@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 
 class ContactHelper:
     def __init__(self, app):
@@ -79,5 +81,18 @@ class ContactHelper:
     def Create(self):
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
+
+
+    def open_contact_page(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("home").click()
+
+    def delete_1st(self):
+        wd = self.app.wd
+        self.open_contact_page()
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
+
 
 
