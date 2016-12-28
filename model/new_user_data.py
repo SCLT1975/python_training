@@ -1,6 +1,6 @@
 class N_u_d:
     def __init__(self, namef = None, namem = None, namel = None, nick = None, title = None, firm = None, addr = None, phone_h = None, phone_m = None, phone_work = None,
-                              phone_fax = None, email_1 = None, email_2 = None, email_3 = None, homep = None, address_2 = None, address_3 = None, notes = None):
+                              phone_fax = None, email_1 = None, email_2 = None, email_3 = None, homep = None, day_1 = None, month_1 = None, year_1 = None,  day_2 = None, month_2 = None, year_2 = None, address_2 = None, address_3 = None, notes = None):
         self.namef = namef
         self.namem = namem
         self.namel = namel
@@ -16,6 +16,12 @@ class N_u_d:
         self.email_2 = email_2
         self.email_3 = email_3
         self.homep = homep
+        self.day_1 = day_1
+        self.month_1 = month_1
+        self.year_1 = year_1
+        self.day_2 = day_2
+        self.month_2 = month_2
+        self.year_2 = year_2
         self.address_2 = address_2
         self.address_3 = address_3
         self.notes = notes
