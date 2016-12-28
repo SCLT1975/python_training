@@ -41,6 +41,13 @@ class ContactHelper:
         if choise1 is not None:
             wd.find_element_by_xpath(choise1).click()
 
+    def count(self):
+        wd = self.app.wd
+        self.open_contact_page()
+        return len(wd.find_elements_by_name("selected[]"))
+
+
+
     def modify_1st(self, N_u_d):
         wd = self.app.wd
         # open contact page
