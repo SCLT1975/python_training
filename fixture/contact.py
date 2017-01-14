@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from model.new_user_data import  N_u_d
 
 class ContactHelper:
     def __init__(self, app):
@@ -114,7 +114,15 @@ class ContactHelper:
         self.change_field_value("notes", N_u_d.notes)
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
 
-
-
-
+    def get_contact_list(self):
+        wd = self.app.wd
+        self.open_contact_page()
+        contacts = []
+        for element in wd.find_elements_by_css_selector("tr"):
+            cells = element.find_elements_by_css_selector("td")
+            name1 = cells[2].text
+            name2 = cells[3].text
+            id = element.find_element_by_name("td.selected[]").get_attribute("value")
+            contacts.append(N_u_d(namef=name1, namel=name2, id = id))
+        return contacts
 

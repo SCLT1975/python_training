@@ -1,6 +1,8 @@
 class N_u_d:
-    def __init__(self, namef = None, namem = None, namel = None, nick = None, title = None, firm = None, addr = None, phone_h = None, phone_m = None, phone_work = None,
-                              phone_fax = None, email_1 = None, email_2 = None, email_3 = None, homep = None, day_1 = None, month_1 = None, year_1 = None,  day_2 = None, month_2 = None, year_2 = None, address_2 = None, address_3 = None, notes = None):
+    def __init__(self, namef = None, namem = None, namel = None, nick = None, title = None, firm = None, addr = None,
+                 phone_h = None, phone_m = None, phone_work = None,phone_fax = None, email_1 = None, email_2 = None,
+                 email_3 = None, homep = None, day_1 = None, month_1 = None, year_1 = None,  day_2 = None,
+                 month_2 = None, year_2 = None, address_2 = None, address_3 = None, notes = None, id = None):
         self.namef = namef
         self.namem = namem
         self.namel = namel
@@ -25,3 +27,4 @@ class N_u_d:
         self.address_2 = address_2
         self.address_3 = address_3
         self.notes = notes
+        self.id = id
