@@ -120,9 +120,10 @@ class ContactHelper:
         contacts = []
         for element in wd.find_elements_by_css_selector("tr"):
             cells = element.find_elements_by_css_selector("td")
+            return cells
+            id = cells[1].find_element_by_name("selected[]").get_attribute("value")
             name1 = cells[2].text
             name2 = cells[3].text
-            id = element.find_element_by_name("td.selected[]").get_attribute("value")
-            contacts.append(N_u_d(namef=name1, namel=name2, id = id))
+            contacts.append(N_u_d(namef=name1, namel=name2, id=id))
         return contacts
 

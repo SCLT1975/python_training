@@ -14,7 +14,28 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="contact.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fixture/contact.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="group.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fixture/group.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="77" column="36" lean-forward="false" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,7 +68,6 @@
         <option value="$PROJECT_DIR$/fixture/session.py" />
         <option value="$PROJECT_DIR$/fixture/application.py" />
         <option value="$PROJECT_DIR$/model/group.py" />
-        <option value="$PROJECT_DIR$/fixture/group.py" />
         <option value="$PROJECT_DIR$/test/test_add_group1.py" />
         <option value="$PROJECT_DIR$/test/test_del_group.py" />
         <option value="$PROJECT_DIR$/test/test_modify_group.py" />
@@ -55,9 +75,10 @@
         <option value="$PROJECT_DIR$/test/1.py" />
         <option value="$PROJECT_DIR$/test/a1.py" />
         <option value="$PROJECT_DIR$/model/new_user_data.py" />
-        <option value="$PROJECT_DIR$/fixture/contact.py" />
         <option value="$PROJECT_DIR$/test/test_modify_contact.py" />
         <option value="$PROJECT_DIR$/test/test_del_contact.py" />
+        <option value="$PROJECT_DIR$/fixture/contact.py" />
+        <option value="$PROJECT_DIR$/fixture/group.py" />
       </list>
     </option>
   </component>
@@ -433,12 +454,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_in_test_new_contact_py - 2017.01.14 at 20h 15m 21s.xml">
-      <configuration name="py.test in test_new_contact.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_in_test_new_contact_py - 2017.01.14 at 20h 16m 33s.xml">
-      <configuration name="py.test in test_new_contact.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_in_test_new_contact_py - 2017.01.14 at 20h 17m 40s.xml">
       <configuration name="py.test in test_new_contact.py" configurationId="tests" />
     </history-entry>
@@ -463,6 +478,12 @@
     <history-entry file="py_test_in_test_new_contact_py - 2017.01.14 at 20h 41m 25s.xml">
       <configuration name="py.test in test_new_contact.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="py_test_in_test_new_contact_py - 2017.01.14 at 20h 48m 55s.xml">
+      <configuration name="py.test in test_new_contact.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_test_new_contact_py - 2017.01.14 at 20h 51m 22s.xml">
+      <configuration name="py.test in test_new_contact.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -475,9 +496,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17423134" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17423134" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33753943" sideWeight="0.50512445" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -808,26 +829,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/model/new_user_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fixture/contact.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="123" column="33" lean-forward="false" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="33" />
+        <state relative-caret-position="290">
+          <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fixture/group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="76" column="82" lean-forward="true" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/new_user_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="256">
+          <caret line="77" column="36" lean-forward="false" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
           <folding />
         </state>
       </provider>
