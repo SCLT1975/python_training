@@ -13,6 +13,13 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_elements_by_name("selected[]")[index].click()
 
+    def open_contact_to_edit_by_index(self, index):
+        wd = self.app.wd
+        row = wd.find_elements_by_name("entry")[index]
+        cell = row.find_elements_by_tag_name("td")[7]
+        cell.find_element_by_tag_name("a").click()
+
+
 
     def Create(self):
         wd = self.app.wd
@@ -50,7 +57,7 @@ class ContactHelper:
         # open contact page
         self.open_contact_page()
         #choose&delete
-        self.select_by_index(index)
+        wd.find_elements_by_name("selected[]")[index].click()
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
         self.contact_cache = None
@@ -63,8 +70,7 @@ class ContactHelper:
         # open contact page
         self.open_contact_page()
         # choose&edit
-        self.select_by_index(index)
-        wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+        self.open_contact_to_edit_by_index(index)
         self.change_field_value("firstname",N_u_d.namef)
         self.change_field_value("middlename", N_u_d.namem)
         self.change_field_value("lastname", N_u_d.namel)
@@ -135,5 +141,5 @@ class ContactHelper:
                 namef = cells[2].text
                 namel = cells[1].text
                 self.contact_cache.append(N_u_d(namef=namef, namel=namel, id=id))
-        return self.contact_cache
+        return list(self.contact_cache)
 
