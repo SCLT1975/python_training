@@ -59,8 +59,7 @@ class ContactHelper:
         wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
         self.change_field_value("firstname",N_u_d.namef)
         self.change_field_value("middlename", N_u_d.namem)
-        self.change_field_value("lastname", N_u_d.namem)
-        self.change_field_value("middlename", N_u_d.namel)
+        self.change_field_value("lastname", N_u_d.namel)
         self.change_field_value("nickname", N_u_d.nick)
         self.change_field_value("title", N_u_d.title)
         self.change_field_value("company", N_u_d.firm)
@@ -89,8 +88,7 @@ class ContactHelper:
         wd = self.app.wd
         self.change_field_value("firstname", N_u_d.namef)
         self.change_field_value("middlename", N_u_d.namem)
-        self.change_field_value("lastname", N_u_d.namem)
-        self.change_field_value("middlename", N_u_d.namel)
+        self.change_field_value("lastname", N_u_d.namel)
         self.change_field_value("nickname", N_u_d.nick)
         self.change_field_value("title", N_u_d.title)
         self.change_field_value("company", N_u_d.firm)
@@ -121,8 +119,8 @@ class ContactHelper:
         for element in wd.find_elements_by_name("entry"):
             cells = element.find_elements_by_css_selector("td")
             id = cells[0].find_element_by_name("selected[]").get_attribute("value")
-            name1 = cells[2].text
-            name2 = cells[1].text
-            contacts.append(N_u_d(namef=name1, namel=name2, id = id))
+            namef = cells[2].text
+            namel = cells[1].text
+            contacts.append(N_u_d(namef=namef, namel=namel, id=id))
         return contacts
 
