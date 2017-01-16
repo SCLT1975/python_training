@@ -21,16 +21,6 @@ class ContactHelper:
             wd.find_element_by_link_text("home").click()
 
 
-    def delete_1st(self):
-        wd = self.app.wd
-        # open contact page
-        self.open_contact_page()
-        #choose&delete
-        self.select_1st_contact()
-        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
-        wd.switch_to_alert().accept()
-
-
     def change_field_value(self, field_name, text):
         wd = self.app.wd
         if text is not None:
@@ -48,6 +38,17 @@ class ContactHelper:
         self.open_contact_page()
         return len(wd.find_elements_by_name("selected[]"))
 
+
+
+    def delete_1st(self):
+        wd = self.app.wd
+        # open contact page
+        self.open_contact_page()
+        #choose&delete
+        self.select_1st_contact()
+        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
+        self.contact_cache = None
 
 
     def modify_1st(self, N_u_d):
@@ -82,6 +83,7 @@ class ContactHelper:
         self.change_field_value("phone2", N_u_d.address_3)
         self.change_field_value("notes", N_u_d.notes)
         wd.find_element_by_name("update").click()
+        self.contact_cache = None
 
 
     def Fill_in(self, N_u_d):
@@ -111,16 +113,20 @@ class ContactHelper:
         self.change_field_value("phone2", N_u_d.address_3)
         self.change_field_value("notes", N_u_d.notes)
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        self.contact_cache = None
+
+    contact_cache = None
 
     def get_contact_list(self):
-        wd = self.app.wd
-        self.open_contact_page()
-        contacts = []
-        for element in wd.find_elements_by_name("entry"):
-            cells = element.find_elements_by_css_selector("td")
-            id = cells[0].find_element_by_name("selected[]").get_attribute("value")
-            namef = cells[2].text
-            namel = cells[1].text
-            contacts.append(N_u_d(namef=namef, namel=namel, id=id))
-        return contacts
+        if self.contact_cache is None:
+            wd = self.app.wd
+            self.open_contact_page()
+            self.contact_cache = []
+            for element in wd.find_elements_by_name("entry"):
+                cells = element.find_elements_by_css_selector("td")
+                id = cells[0].find_element_by_name("selected[]").get_attribute("value")
+                namef = cells[2].text
+                namel = cells[1].text
+                self.contact_cache.append(N_u_d(namef=namef, namel=namel, id=id))
+        return self.contact_cache
 
