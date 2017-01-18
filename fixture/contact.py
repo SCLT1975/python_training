@@ -38,8 +38,13 @@ class ContactHelper:
         phone_work = wd.find_element_by_name("work").get_attribute("value")
         phone_m = wd.find_element_by_name("mobile").get_attribute("value")
         phone_h2 = wd.find_element_by_name("phone2").get_attribute("value")
+        addr = wd.find_element_by_name("address").get_attribute("value")
+        email_1 = wd.find_element_by_name("email").get_attribute("value")
+        email_2 = wd.find_element_by_name("email2").get_attribute("value")
+        email_3 = wd.find_element_by_name("email3").get_attribute("value")
         return N_u_d(namef = namef, namel = namel, id = id, phone_h = phone_h,
-                       phone_work = phone_work, phone_m = phone_m, phone_h2 = phone_h2)
+                       phone_work = phone_work, phone_m = phone_m, phone_h2 = phone_h2,
+                     addr = addr, email_1 = email_1, email_2 = email_2, email_3 = email_3)
 
     def get_contact_info_from_view_page(self, index):
         wd = self.app.wd
@@ -169,8 +174,10 @@ class ContactHelper:
                 id = cells[0].find_element_by_name("selected[]").get_attribute("value")
                 namef = cells[2].text
                 namel = cells[1].text
-                all_phones = cells[5].text.splitlines()
-                self.contact_cache.append(N_u_d(namef=namef, namel=namel, id=id, phone_h=all_phones[0],
-                                                phone_m=all_phones[1], phone_work=all_phones[2], phone_h2=all_phones[3]))
+                addr = cells[3].text
+                all_email = cells[4].text
+                all_phones = cells[5].text
+                self.contact_cache.append(N_u_d(namef=namef, namel=namel, id=id, all_phones_from_home_page = all_phones,
+                                                addr = addr, all_email = all_email))
         return list(self.contact_cache)
 
