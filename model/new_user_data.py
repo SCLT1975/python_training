@@ -36,7 +36,12 @@ class N_u_d:
 
 
     def __repr__(self):
-        return "%s:%s:%s" % (self.id, self.namef, self.namel)
+        return "%s:%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s" % (self.id, self.namef, self.namel,
+                                                                                self.nick, self.title, self.firm, self.addr,
+                                                                                self.phone_h, self.phone_m, self.phone_work,
+                                                                                self.phone_fax, self.email_1,self.email_2,
+                                                                                self.email_3, self.homep, self.year_1, self.year_2,
+                                                                                self.address_2, self.phone_h2, self.notes)
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) and self.namef == other.namef \
