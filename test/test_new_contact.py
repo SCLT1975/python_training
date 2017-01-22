@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from model.new_user_data import N_u_d
-import pytest
-from data.add_contact import testdata
 
 
-@pytest.mark.parametrize("contact", testdata, ids = [repr(x) for x in testdata])
-def test_test_new_contact(app, contact):
+
+
+def test_test_new_contact(app, json_contacts):
+    contact = json_contacts
     old_contacts = app.contact.get_contact_list()
     app.contact.Create()
     app.contact.Fill_in(contact)

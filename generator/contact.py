@@ -15,7 +15,7 @@ except getopt.GetoptError as err:
 
 
 n = 5
-f = "data/contact.json"
+f = "data/contacts.json"
 
 for o, a in opts:
     if o == "-n":
@@ -46,9 +46,7 @@ testdata = [
 
 file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", f)
 
-jsonpickle.load_backend('json')
-jsonpickle.set_preferred_backend('json')
-jsonpickle.set_encoder_options('json', sort_keys=True, indent=2)
 
 with open(file, "w") as out:
+    jsonpickle.set_encoder_options('json', indent=2)
     out.write(jsonpickle.encode(testdata))
