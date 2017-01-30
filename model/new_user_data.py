@@ -45,7 +45,7 @@ class N_u_d:
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) and self.namef == other.namef \
-               and self.namel == other.namel
+               and self.namel == other.namel and self.addr == other.addr
 
 
     def id_or_max(self):
